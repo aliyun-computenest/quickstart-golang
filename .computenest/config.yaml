@@ -3,21 +3,21 @@ Service:
   DeployMetadata:
     SupplierDeployMetadata:
       SupplierTemplateConfigs:
-        - Name: 选择ECS实例（Linux）
-          Url: ros_templates/template-select-ecs.yaml
-          PredefinedParameters: []
-        - Name: 新建ECS实例
-          Url: ros_templates/template-create-ecs.yaml
-          PredefinedParameters: []
-    TemplateConfigs:
       - Name: 选择ECS实例（Linux）
         Url: ros_templates/template-select-ecs.yaml
         PredefinedParameters: []
-        DeployScene: ECS
       - Name: 新建ECS实例
         Url: ros_templates/template-create-ecs.yaml
         PredefinedParameters: []
-        DeployScene: ECS
+    TemplateConfigs:
+    - Name: 选择ECS实例（Linux）
+      Url: ros_templates/template-select-ecs.yaml
+      PredefinedParameters: []
+      DeployScene: ECS
+    - Name: 新建ECS实例
+      Url: ros_templates/template-create-ecs.yaml
+      PredefinedParameters: []
+      DeployScene: ECS
     NetworkMetadata:
       EnablePrivateVpcConnection: false
       EnableReversePrivateVpcConnection: false
@@ -33,18 +33,21 @@ Service:
         EnablePrometheus: false
   ServiceType: private
   ServiceInfo:
-    - Agreements: []
-      Image: resources/icons/service_logo.png
-      Locale: zh-CN
-      Name: Golang运行环境
-      ShortDescription: Golang是一种静态类型、编译型的编程语言，由谷歌的Robert Griesemer、Rob Pike和Ken Thompson于2007年设计，并在2009年正式发布。Go语言设计的目标是实现高效的编译、高效的执行以及易于编程和高效的数据处理。
-      Softwares: []
-    - Agreements: []
-      Image: resources/icons/service_logo.png
-      Locale: en-US
-      Name: Golang Runtime Environment
-      ShortDescription: Golang is a statically typed, compiled programming language designed by Robert Griesemer, Rob Pike, and Ken Thompson of Google in 2007 and officially released in 2009. The goal of Go language design is to achieve efficient compilation, efficient execution, easy programming, and efficient data processing.
-      Softwares: []
+  - Locale: zh-CN
+    Name: Golang运行环境
+    ShortDescription: Golang是一种静态类型、编译型的编程语言，由谷歌的Robert Griesemer、Rob Pike和Ken Thompson于2007年设计，并在2009年正式发布。Go语言设计的目标是实现高效的编译、高效的执行以及易于编程和高效的数据处理。
+    Image: 
+      https://service-info-public.oss-cn-hangzhou.aliyuncs.com/5141674772595072/service-image/e66266a7-5c44-491d-8248-7f085519df4f.png
+    Softwares: []
+  - Locale: en-US
+    Name: Golang Runtime Environment
+    ShortDescription: Golang is a statically typed, compiled programming language
+      designed by Robert Griesemer, Rob Pike, and Ken Thompson of Google in 2007 and
+      officially released in 2009. The goal of Go language design is to achieve efficient
+      compilation, efficient execution, easy programming, and efficient data processing.
+    Image: 
+      https://service-info-public.oss-cn-hangzhou.aliyuncs.com/5141674772595072/service-image/871faf18-ac7d-4a23-b5ac-06498051597e.png
+    Softwares: []
   ShareType: Public
   ApprovalType: Manual
 Artifact: {}
